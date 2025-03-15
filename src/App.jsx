@@ -6,7 +6,13 @@ const TURNS = {
 
 const board = Array(9).fill(null)
 
-
+const Square = ({children}) => {
+  return (
+    <div className="square">
+      {children}
+    </div>
+  )
+}
 
 function App() {
   return (
@@ -16,11 +22,9 @@ function App() {
         {
           board.map((_, index) => {
             return (
-              <div>
-                <span>
-                  {index}
-                </span>
-              </div>
+              <Square key={index}>
+                {index}
+              </Square>
             )
           }
         )
