@@ -4,8 +4,8 @@ import { checkWinner } from "./logic/board"
 import { Square } from "./components/Square"
 
 const PLAYERS = {
-  X: "x",
-  O: "o"
+  X: "❌",
+  O: "🔵"
 }
 
 function App() {
