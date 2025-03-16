@@ -3,6 +3,7 @@ import confetti from "canvas-confetti"
 import { checkWinner } from "./logic/board"
 import { Square } from "./components/Square"
 import { Board } from "./components/Board"
+import { Winner } from "./components/Winner"
 
 const PLAYERS = {
   X: "❌",
@@ -50,16 +51,7 @@ function App() {
       <section>
         {
           winner && (
-            <section className="winner">
-              <div className="text">
-                <h2>
-                  {`${winner} won!`}
-                </h2>
-                <footer>
-                  <button onClick={restartGame}>Restart</button>
-                </footer>
-              </div>
-            </section>
+            <Winner winner={winner} restartGame={restartGame}></Winner>
            
           )
         }
