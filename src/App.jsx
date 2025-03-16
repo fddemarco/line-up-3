@@ -2,6 +2,7 @@ import { useState } from "react"
 import confetti from "canvas-confetti"
 import { checkWinner } from "./logic/board"
 import { Square } from "./components/Square"
+import { Board } from "./components/Board"
 
 const PLAYERS = {
   X: "❌",
@@ -38,18 +39,7 @@ function App() {
   return (
     <main className="board">
       <h1>Tic tac toe</h1>
-      <section className="game">
-        {
-          board.map((_, index) => {
-            return (
-              <Square key={index} callback={updateBoard} index={index}>
-                {board[index]}
-              </Square>
-            )
-          }
-        )
-        }
-      </section>
+      <Board board={board} callback={updateBoard}></Board>
       <section>
         <section className="turn">
           <Square isSelected={player === PLAYERS.X}>{PLAYERS.X}</Square>
@@ -77,5 +67,6 @@ function App() {
     </main>
 )
 }
+  
 
 export default App
