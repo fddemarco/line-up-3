@@ -32,7 +32,7 @@ function checkWinner(board){
   function checkDiagonal(board){
     const winner = board[0]
     let won = true
-    for (let i = 0; i < 3; i++){
+    for (let i = 1; i < 3; i++){
       won &= winner == board[i*3 + i]
     }
     if (won) return winner
@@ -40,9 +40,9 @@ function checkWinner(board){
   }
   
   function checkSecondDiagonal(board){
-    const winner = board[0]
+    const winner = board[2]
     let won = true
-    for (let i = 0; i < 3; i++){
+    for (let i = 1; i < 3; i++){
       won &= winner == board[(i+1)*3 - i - 1]
     }
     if (won) return winner
