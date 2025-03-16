@@ -1,10 +1,12 @@
 import confetti from "canvas-confetti"
 import { useState } from "react"
-import { checkWinner } from "./logic/board"
+
 import { Board } from "./components/Board"
 import { Winner } from "./components/Winner"
 import { Turn } from "./components/Turn"
 import { Restart } from "./components/Restart"
+
+import { checkWinner } from "./logic/board"
 import { PLAYERS } from "./logic/constants"
 import {saveState, getBoard, getPlayer, resetState} from "./logic/storage"
 
