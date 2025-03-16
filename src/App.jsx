@@ -45,6 +45,7 @@ function App() {
     setWinner(null)
     setBoard(Array(9).fill(null))
     setPlayer(PLAYERS.X)
+    window.localStorage.clear()
   }
 
   return (
