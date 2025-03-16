@@ -1,5 +1,5 @@
 import {expect, jest, test} from '@jest/globals';
-import {checkWinner, checkDiagonal, checkSecondDiagonal} from "./logic"
+import {checkWinner, checkDiagonal, checkSecondDiagonal, checkRows} from "./logic"
 
 test.each([
     [[null, null, null, null, null, null, null, null, null], null],
@@ -30,4 +30,13 @@ test.each([
     [["O", "O", "X", null, "X", null,"X", null, null], "X"],
   ])("checkSecondDiagonal should return %s", (board, expected) => {
     expect(checkSecondDiagonal(board)).toBe(expected)
+  })
+
+  test.each([
+    [[null, null, null, null, null, null, null, null, null], null],
+    [["X", "X", "X", null, null, null, null, null, null], "X"],
+    [[null, null, null, "X", "X", "X", null, null, null], "X"],
+    [[null, null, null, null, null, null, "X", "X", "X"], "X"],
+  ])("checkRows should return %s", (board, expected) => {
+    expect(checkRows(board)).toBe(expected)
   })
