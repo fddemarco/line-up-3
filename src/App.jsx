@@ -34,8 +34,13 @@ function App() {
     setPlayer(selectedPlayer)
 
     const newWinner = checkWinner(newBoard)
-    console.log(newWinner)
     setWinner(newWinner)
+  }
+
+  const restartGame = () => {
+    setWinner(null)
+    setBoard(Array(9).fill(null))
+    setPlayer(PLAYERS.X)
   }
 
   return (
@@ -56,6 +61,23 @@ function App() {
       <section className="turn">
         <Square isSelected={player === PLAYERS.X}>{PLAYERS.X}</Square>
         <Square isSelected={player === PLAYERS.O}>{PLAYERS.O}</Square>
+      </section>
+      <section>
+        {
+          winner && (
+            <section className="winner">
+              <div className="text">
+                <h2>
+                  {`${winner} won!`}
+                </h2>
+                <footer>
+                  <button onClick={restartGame}>Restart</button>
+                </footer>
+              </div>
+            </section>
+           
+          )
+        }
       </section>
     </main>
 )
