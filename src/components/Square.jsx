@@ -1,6 +1,5 @@
-
 const Square = ({ children, isSelected, callback, index }) => {
-  const className = `square ${isSelected ? "is-selected" : ""}`
+  const className = `square ${isSelected ? 'is-selected' : ''}`
   const extCallback = () => { callback(index) }
   return (
     <div className={className} onClick={extCallback}>
@@ -9,4 +8,4 @@ const Square = ({ children, isSelected, callback, index }) => {
   )
 }
 
-export {Square}
+export { Square }

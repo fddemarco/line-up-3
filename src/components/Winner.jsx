@@ -1,18 +1,18 @@
-import { Restart } from "./Restart"
+import { Restart } from './Restart'
 
-const Winner = ({winner, restartGame}) => {
-return (
-    <section className="winner">
-        <div className="text">
+const Winner = ({ winner, restartGame }) => {
+  return (
+    <section className='winner'>
+      <div className='text'>
         <h2>
-            {`${winner} won!`}
+          {`${winner} won!`}
         </h2>
         <footer>
-            <Restart restartGame={restartGame}></Restart>
+          <Restart restartGame={restartGame} />
         </footer>
-        </div>
+      </div>
     </section>
-    )
+  )
 }
 
-export {Winner}
+export { Winner }

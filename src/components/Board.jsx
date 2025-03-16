@@ -1,8 +1,8 @@
+import { Square } from './Square'
 
-import { Square } from "./Square"
-
-const Board = ({board, callback}) => {
-    return <section className="game">
+const Board = ({ board, callback }) => {
+  return (
+    <section className='game'>
       {board.map((_, index) => {
         return (
           <Square key={index} callback={callback} index={index}>
@@ -12,6 +12,7 @@ const Board = ({board, callback}) => {
       }
       )}
     </section>
-  }
+  )
+}
 
-export {Board}
+export { Board }

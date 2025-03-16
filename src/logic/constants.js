@@ -1,6 +1,6 @@
 const PLAYERS = {
-    X: "❌",
-    O: "🔵"
-  }
+  X: '❌',
+  O: '🔵'
+}
 
-export {PLAYERS}
+export { PLAYERS }
