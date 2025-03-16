@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { checkWinner } from "./logic"
 
 const PLAYERS = {
   X: "x",
@@ -32,7 +33,8 @@ function App() {
     let selectedPlayer = player === PLAYERS.X ? PLAYERS.O : PLAYERS.X
     setPlayer(selectedPlayer)
 
-    const newWinner = checkWinner(board)
+    const newWinner = checkWinner(newBoard)
+    console.log(newWinner)
     setWinner(newWinner)
   }
 
