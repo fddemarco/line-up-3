@@ -1,24 +1,12 @@
 import { useState } from "react"
 import confetti from "canvas-confetti"
 import { checkWinner } from "./logic"
+import { Square } from "./components/Square"
 
 const PLAYERS = {
   X: "x",
   O: "o"
 }
-
-const Square = ({children, isSelected, callback, index}) => {  
-  const className = `square ${isSelected ? "is-selected" : ""}`
-  const extCallback = () =>{callback(index)}
-  return (
-    <div className={className} onClick={extCallback}>
-      {children}
-    </div>
-  )
-}
-
-
-
 
 function App() {
   const [board, setBoard] = useState(Array(9).fill(null))
