@@ -4,6 +4,7 @@ import { checkWinner } from "./logic/board"
 import { Board } from "./components/Board"
 import { Winner } from "./components/Winner"
 import { Turn } from "./components/Turn"
+import { Restart } from "./components/Restart"
 import { PLAYERS } from "./logic/constants"
 
 
@@ -40,7 +41,7 @@ function App() {
       <Board board={board} callback={updateBoard}></Board>
       <section>
         <Turn player={player}></Turn>
-        <button onClick={restartGame}>Restart</button>
+        <Restart restartGame={restartGame}></Restart>
       </section>
       <section>
         {
