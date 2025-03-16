@@ -58,9 +58,12 @@ function App() {
         )
         }
       </section>
-      <section className="turn">
-        <Square isSelected={player === PLAYERS.X}>{PLAYERS.X}</Square>
-        <Square isSelected={player === PLAYERS.O}>{PLAYERS.O}</Square>
+      <section>
+        <section className="turn">
+          <Square isSelected={player === PLAYERS.X}>{PLAYERS.X}</Square>
+          <Square isSelected={player === PLAYERS.O}>{PLAYERS.O}</Square>
+        </section>
+        <button onClick={restartGame}>Restart</button>
       </section>
       <section>
         {
