@@ -20,6 +20,7 @@ function App() {
   const [player, setPlayer] = useState(PLAYERS.X)
 
   const updateBoard = (index) => {
+    if (board[index]) return
     const newBoard = structuredClone(board)
     newBoard[index] = player
     setBoard(newBoard)
