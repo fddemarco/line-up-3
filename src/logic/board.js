@@ -35,7 +35,7 @@ function checkWinner(board){
     for (let i = 1; i < 3; i++){
       won &&= winner == board[i*3 + i]
     }
-    if (won) return winner
+    if (won && winner) return winner
     return null
   }
   
@@ -45,7 +45,7 @@ function checkWinner(board){
     for (let i = 1; i < 3; i++){
       won &&= winner == board[(i+1)*3 - i - 1]
     }
-    if (won) return winner
+    if (won && winner) return winner
     return null
   }
 
