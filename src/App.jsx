@@ -1,6 +1,6 @@
 import { useState } from "react"
 import confetti from "canvas-confetti"
-import { checkWinner } from "./logic"
+import { checkWinner } from "./logic/logic"
 import { Square } from "./components/Square"
 
 const PLAYERS = {

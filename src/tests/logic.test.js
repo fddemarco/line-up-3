@@ -1,5 +1,5 @@
-import {expect, jest, test} from '@jest/globals';
-import {checkWinner, checkDiagonal, checkSecondDiagonal, checkRows} from "./logic"
+import {expect, test} from '@jest/globals';
+import {checkWinner, checkDiagonal, checkSecondDiagonal, checkRows} from "../logic/logic"
 
 test.each([
     [[null, null, null, null, null, null, null, null, null], null],
