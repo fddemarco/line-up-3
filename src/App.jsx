@@ -9,8 +9,17 @@ import { PLAYERS } from "./logic/constants"
 
 
 function App() {
-  const [board, setBoard] = useState(Array(9).fill(null))
-  const [player, setPlayer] = useState(PLAYERS.X)
+  const [board, setBoard] = useState(() => {
+    const boardFromStorage = window.localStorage.getItem("board")
+    if (boardFromStorage) return JSON.parse(boardFromStorage)
+    return Array(9).fill(null)
+  })
+  const [player, setPlayer] = useState(() => {
+    const playerFromStorage = window.localStorage.getItem("player")
+    if (playerFromStorage) return JSON.parse(playerFromStorage)
+    return PLAYERS.X
+  }
+  )
   const [winner, setWinner] = useState(null)
 
   const updateBoard = (index) => {
@@ -19,8 +28,11 @@ function App() {
     newBoard[index] = player
     setBoard(newBoard)
 
-    let selectedPlayer = player === PLAYERS.X ? PLAYERS.O : PLAYERS.X
-    setPlayer(selectedPlayer)
+    let newPlayer = player === PLAYERS.X ? PLAYERS.O : PLAYERS.X
+    setPlayer(newPlayer)
+
+    window.localStorage.setItem("board", JSON.stringify(newBoard))
+    window.localStorage.setItem("player", JSON.stringify(newPlayer))
 
     const newWinner = checkWinner(newBoard)
     if (newWinner){
