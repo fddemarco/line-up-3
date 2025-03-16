@@ -6,7 +6,7 @@ import { Winner } from "./components/Winner"
 import { Turn } from "./components/Turn"
 import { Restart } from "./components/Restart"
 import { PLAYERS } from "./logic/constants"
-import {saveState, getBoard, getPlayer} from "./logic/storage"
+import {saveState, getBoard, getPlayer, resetState} from "./logic/storage"
 
 
 function App() {
@@ -35,7 +35,7 @@ function App() {
     setWinner(null)
     setBoard(Array(9).fill(null))
     setPlayer(PLAYERS.X)
-    window.localStorage.clear()
+    resetState()
   }
 
   return (

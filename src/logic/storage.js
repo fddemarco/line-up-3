@@ -17,5 +17,9 @@ function getPlayer(){
     return PLAYERS.X
 }
 
+function resetState(){
+    window.localStorage.clear()
+}
 
-export {saveState, getBoard, getPlayer}
+
+export {saveState, getBoard, getPlayer, resetState}
