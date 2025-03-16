@@ -15,18 +15,25 @@ const Square = ({children, isSelected, callback, index}) => {
   )
 }
 
+
+
+
 function App() {
   const [board, setBoard] = useState(Array(9).fill(null))
   const [player, setPlayer] = useState(PLAYERS.X)
+  const [winner, setWinner] = useState(null)
 
   const updateBoard = (index) => {
-    if (board[index]) return
+    if (board[index] || winner) return
     const newBoard = structuredClone(board)
     newBoard[index] = player
     setBoard(newBoard)
 
     let selectedPlayer = player === PLAYERS.X ? PLAYERS.O : PLAYERS.X
     setPlayer(selectedPlayer)
+
+    const newWinner = checkWinner(board)
+    setWinner(newWinner)
   }
 
   return (
