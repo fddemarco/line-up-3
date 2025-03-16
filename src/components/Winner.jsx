@@ -1,3 +1,4 @@
+import { Restart } from "./Restart"
 
 const Winner = ({winner, restartGame}) => {
 return (
@@ -7,7 +8,7 @@ return (
             {`${winner} won!`}
         </h2>
         <footer>
-            <button onClick={restartGame}>Restart</button>
+            <Restart restartGame={restartGame}></Restart>
         </footer>
         </div>
     </section>
