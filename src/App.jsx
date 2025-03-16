@@ -1,4 +1,5 @@
 import { useState } from "react"
+import confetti from "canvas-confetti"
 import { checkWinner } from "./logic"
 
 const PLAYERS = {
@@ -34,7 +35,10 @@ function App() {
     setPlayer(selectedPlayer)
 
     const newWinner = checkWinner(newBoard)
-    setWinner(newWinner)
+    if (newWinner){
+      confetti()
+      setWinner(newWinner)
+    }
   }
 
   const restartGame = () => {
